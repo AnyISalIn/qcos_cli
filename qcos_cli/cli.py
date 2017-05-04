@@ -69,6 +69,7 @@ def get_parser():
     update_file_parser.add_argument('--authority', default=None, help='update file authority')
     update_file_parser.add_argument('--cache_control', default=None, help='update cache control header')
     update_file_parser.add_argument('--content_type', default=None, help='update content type header')
+    update_file_parser.set_defaults(func=update_file)
 
     del_file_parser = sub.add_parser('del_file', help='del file')
     del_file_parser.add_argument('remote_file', help='remote file path, start with /, end not /')
