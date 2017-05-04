@@ -104,12 +104,112 @@ $ python run.py stat_file '/run.py'
 
 ### 更新文件
 
+```shell
+$ python run.py update_file /run.py --content_type=text/html
+
+{
+   "message": "SUCCESS",
+   "code": 0,
+   "request_id": "NTkwYWVjMjhfNWJiODQzXzlmMzNfNjBmZmM="
+}
+```
+
 ### 删除文件
+
+```shell
+$ python run.py del_file '/run.py'
+
+{
+   "message": "SUCCESS",
+   "code": 0,
+   "request_id": "NTkwYWVjYjRfNTlhODQzXzgxYWFfNTdmYzg="
+}
+```
 
 ### 创建文件夹
 
+```shell
+$ python run.py create_folder '/cccc/'
+
+{
+    "message": "SUCCESS",
+    "code": 0,
+    "data": {
+        "ctime": 1493888203
+    },
+    "request_id": "NTkwYWVjY2JfNThhMDY4XzI0ZGVfNWIyNTE="
+}
+```
+
 ### 查看文件夹状态
+
+```shell
+$ python run.py stat_folder '/cccc/'
+
+{
+   "message": "SUCCESS",
+   "code": 0,
+   "data": {
+       "mtime": 1493888203,
+       "ctime": 1493888203,
+       "biz_attr": ""
+   },
+   "request_id": "NTkwYWVjZGVfZjM0NDNfMTE4OV8xZjk3Njc="
+}
+```
+
+### 列出所有文件
+
+```shell
+$ python run.py upload_file --overwrite run.py '/cccc/run.py'
+
+{
+    "message": "SUCCESS",
+    "code": 0,
+    "data": {
+        "url": "http://shxxxxxxcom/files/v2/1251720225/anyisalin1/cccc/run.py",
+        "access_url": "http://anyixxxxx225.file.myqcloud.com/cccc/run.py",
+        "resource_path": "/1251720225/anyisalin1/cccc/run.py",
+        "vid": "99ad409xxxx8d4cefbcc1493888266",
+        "source_url": "http://anyisaxxxxx.cossh.myqcloud.com/cccc/run.py"
+    },
+    "request_id": "NTkwYWVkMxxxX2FhNDhfNTNlMTc="
+}
+
+$ python run.py list_folder '/cccc/'
+{
+    "message": "SUCCESS",
+    "code": 0,
+    "data": {
+        "infos": [
+            {
+                "ctime": 1493888266,
+                "biz_attr": "",
+                "filelen": 768,
+                "authority": "eInvalid",
+                "source_url": "http://xxxxx25.cossh.myqcloud.com/cccc/run.py",
+                "sha": "4ac2778f74eeaaxxxxx5f057a13faff373",
+                "filesize": 768,
+                "mtime": 1493888266,
+                "access_url": "http://anyisxxxxxe.myqcloud.com/cccc/run.py",
+                "name": "run.py"
+            }
+        ],
+        "listover": true,
+        "context": ""
+    },
+    "request_id": "NTkwYWVkMxxxx2FhMWNfNTczNjU="
+}
+```
 
 ### 删除文件夹
 
-### 列出所有文件
+```shell
+$ python run.py del_folder '/cccc/'
+
+{
+    "message": "SUCCESS",
+    "code": 0,
+    "request_id": "NTkwYWVkNDJfMmIzOTQzXzgxNTZfNTJjODE="
+}
+```
