@@ -1,37 +1,18 @@
 import json
 from qcloud_cos import *
+from qcos_cli.config import config
+from qcos_cli.dec import CheckConfig
 
 
 def jsonify(data):
     return json.dumps(data, indent=4, ensure_ascii=False)
 
 
-class QCloudCosTool(object):
-
-    def __init__(self, config):
-        self.check_config(config)
+@CheckConfig(config)
+class QCloudCosTool:
+    def __init__(self):
         self.bucket_name = config.pop('bucket_name')
         self.client = CosClient(**config)
-
-    @staticmethod
-    def check_config(config):
-        for key, val in config.items():
-            if not val:
-                if key == 'appid':
-                    export_key = 'QCOS_APPID'
-                elif key == 'secret_id':
-                    export_key = 'QCOS_SECRET_ID'
-                elif key == 'secret_key':
-                    export_key = 'QCOS_SECRET_KEY'
-                elif key == 'region':
-                    export_key = 'QCOS_REGION'
-                elif key == 'bucket_name':
-                    export_key = 'QCOS_BUCKET_NAME'
-                raise AttributeError(
-                    '{key} is not set, should export {export_key}=xxxxxx'.format(key=key, export_key=export_key))
-
-    def get_bucket_info(self):
-        pass
 
     def upload_file(self, local_file, remote_file=None, overwrite=1):
         remote_file = remote_file or '/' + local_file
