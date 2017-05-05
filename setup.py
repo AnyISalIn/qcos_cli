@@ -14,5 +14,7 @@ setup(name='qcos_cli',
       entry_points={
           'console_scripts': [
               'qcos_cli=qcos_cli.cli:main'
-          ]
-      })
+          ]},
+      classifiers=[
+          'Programming Language :: Python :: 2.7',
+      ])

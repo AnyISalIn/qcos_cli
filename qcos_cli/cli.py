@@ -48,7 +48,7 @@ def del_folder(args):
 
 
 def get_parser():
-    parser = argparse.ArgumentParser(prog='python run.py')
+    parser = argparse.ArgumentParser(prog='qcos_cli')
     sub = parser.add_subparsers()
 
     upload_file_parser = sub.add_parser(
