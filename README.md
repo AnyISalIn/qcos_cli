@@ -4,12 +4,20 @@
 
 ## 安装
 
+### 源码安装
+
 ```shell
 $ git clone https://github.com/AnyISalIn/qcos_cli.git
 
 $ cd qcos_cli
 
-$ python setup.py
+$ pip install .
+```
+
+### PyPI
+
+```shell
+$ pip install qcos_cli
 ```
 
 ```shell
