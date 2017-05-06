@@ -20,28 +20,6 @@ $ pip install .
 $ pip install qcos_cli
 ```
 
-```shell
-$ qcos_cli --help
-usage: qcos_cli [-h]
-                {upload_file,stat_file,update_file,del_file,create_folder,update_folder,stat_folder,del_folder,list_folder}
-                ...
-
-positional arguments:
-  {upload_file,stat_file,update_file,del_file,create_folder,update_folder,stat_folder,del_folder,list_folder}
-    upload_file         upload local file
-    stat_file           show remote file status
-    update_file         update file
-    del_file            del file
-    create_folder       create folder
-    update_folder       update folder
-    stat_folder         show remote folder status
-    del_folder          del folder
-    list_folder         list folder
-
-optional arguments:
-  -h, --help            show this help message and exit
-```
-
 ## 配置
 
 ```python
@@ -68,18 +46,7 @@ $ export QCOS_BUCKET_NAME=xxxxxxxx
 ## 上传文件
 
 ```shell
-$ qcos_cli upload_file --help
-usage: qcos_cli upload_file [-h] [--overwrite] local_file remote_file
-
-positional arguments:
-  local_file   local file path
-  remote_file  remote file path, start with /, end not /
-
-optional arguments:
-  -h, --help   show this help message and exit
-  --overwrite  overwrite remote file
-
-$ qcos_cli upload_file --overwrite run.py '/run.py'
+$ qcos_cli file upload run.py '/run.py' --overwrite
   {
       "message": "SUCCESS",
       "code": 0,
@@ -97,7 +64,7 @@ $ qcos_cli upload_file --overwrite run.py '/run.py'
 ### 查看文件状态
 
 ```shell
-$ qcos_cli stat_file '/run.py'
+$ qcos_cli file stat '/run.py'
 {
     "message": "SUCCESS",
     "code": 0,
@@ -122,7 +89,7 @@ $ qcos_cli stat_file '/run.py'
 ### 更新文件
 
 ```shell
-$ qcos_cli update_file /run.py --content_type=text/html
+$ qcos_cli file update /run.py --content_type=text/html
 
 {
    "message": "SUCCESS",
@@ -134,7 +101,7 @@ $ qcos_cli update_file /run.py --content_type=text/html
 ### 删除文件
 
 ```shell
-$ qcos_cli del_file '/run.py'
+$ qcos_cli file delete '/run.py'
 
 {
    "message": "SUCCESS",
@@ -146,7 +113,7 @@ $ qcos_cli del_file '/run.py'
 ### 创建文件夹
 
 ```shell
-$ qcos_cli create_folder '/cccc/'
+$ qcos_cli folder create '/cccc/'
 
 {
     "message": "SUCCESS",
@@ -161,7 +128,7 @@ $ qcos_cli create_folder '/cccc/'
 ### 查看文件夹状态
 
 ```shell
-$ qcos_cli stat_folder '/cccc/'
+$ qcos_cli folder stat '/cccc/'
 
 {
    "message": "SUCCESS",
@@ -178,22 +145,7 @@ $ qcos_cli stat_folder '/cccc/'
 ### 列出所有文件
 
 ```shell
-$ qcos_cli upload_file --overwrite run.py '/cccc/run.py'
-
-{
-    "message": "SUCCESS",
-    "code": 0,
-    "data": {
-        "url": "http://shxxxxxxcom/files/v2/1251720225/anyisalin1/cccc/run.py",
-        "access_url": "http://anyixxxxx225.file.myqcloud.com/cccc/run.py",
-        "resource_path": "/1251720225/anyisalin1/cccc/run.py",
-        "vid": "99ad409xxxx8d4cefbcc1493888266",
-        "source_url": "http://anyisaxxxxx.cossh.myqcloud.com/cccc/run.py"
-    },
-    "request_id": "NTkwYWVkMxxxX2FhNDhfNTNlMTc="
-}
-
-$ qcos_cli list_folder '/cccc/'
+$ qcos_cli folder list '/cccc/'
 {
     "message": "SUCCESS",
     "code": 0,
@@ -222,7 +174,7 @@ $ qcos_cli list_folder '/cccc/'
 ### 删除文件夹
 
 ```shell
-$ qcos_cli del_folder '/cccc/'
+$ qcos_cli folder delete '/cccc/'
 
 {
     "message": "SUCCESS",
