@@ -9,7 +9,8 @@ setup(name='qcos_cli',
       url='https://github.com/AnyISalIn/qcos_cli',
       packages=['qcos_cli'],
       install_requires=[
-          'qcloud-cos-v4==0.0.18'
+          'qcloud-cos-v4==0.0.18',
+          'fire==0.1.0'
       ],
       entry_points={
           'console_scripts': [
