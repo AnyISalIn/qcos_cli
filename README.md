@@ -12,6 +12,8 @@ $ git clone https://github.com/AnyISalIn/qcos_cli.git
 $ cd qcos_cli
 
 $ pip install .
+
+$ python setup.py install
 ```
 
 ### PyPI
