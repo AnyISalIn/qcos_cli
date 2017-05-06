@@ -22,6 +22,48 @@ $ python setup.py install
 $ pip install qcos_cli
 ```
 
+### usage
+
+```shell
+$ qcos_cli
+
+Type:        Pipeline
+String form: <qcos_cli.cli.Pipeline object at 0x22876d0>
+File:        /usr/lib/python2.7/site-packages/qcos_cli/cli.py
+
+Usage:       /usr/bin/qcos_cli
+             /usr/bin/qcos_cli file
+             /usr/bin/qcos_cli folder
+```
+
+```shell
+$ qcos_cli file
+
+Type:        FileOps
+String form: <qcos_cli.cli.FileOps object at 0x3b37710>
+File:        /usr/lib/python2.7/site-packages/qcos_cli/cli.py
+
+Usage:       /usr/bin/qcos_cli file
+             /usr/bin/qcos_cli file delete
+             /usr/bin/qcos_cli file stat
+             /usr/bin/qcos_cli file update
+             /usr/bin/qcos_cli file upload
+```
+
+```shell
+$ qcos_cli folder
+
+Type:        FolderOps
+String form: <qcos_cli.cli.FolderOps object at 0x2a8c750>
+File:        /usr/lib/python2.7/site-packages/qcos_cli/cli.py
+
+Usage:       /usr/bin/qcos_cli folder
+             /usr/bin/qcos_cli folder create
+             /usr/bin/qcos_cli folder delete
+             /usr/bin/qcos_cli folder list
+             /usr/bin/qcos_cli folder update
+```
+
 ## 配置
 
 ```python

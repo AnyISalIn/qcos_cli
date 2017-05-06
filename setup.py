@@ -2,7 +2,7 @@ from setuptools import setup
 
 
 setup(name='qcos_cli',
-      version='0.1',
+      version='0.2',
       description='qcos python sdk cli wrapper',
       author='AnyISalIn',
       author_email='anyisalin@gmail.com',
