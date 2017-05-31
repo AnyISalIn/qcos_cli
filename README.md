@@ -1,5 +1,7 @@
 # qcos_cli
 
+[![PyPI](https://img.shields.io/pypi/v/qcos_cli.svg)]()
+
 > 腾讯云对象存储命令行工具
 
 ## 安装
